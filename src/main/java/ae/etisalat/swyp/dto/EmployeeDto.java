@@ -1,24 +1,22 @@
 package ae.etisalat.swyp.dto;
 
-
-
 public class EmployeeDto {
 
 	private String name;
-	
+
 	private String email;
-	
+
 	private String employeeId;
-	
+
 	private String salary;
-	
-	//private String transactionId;
+
+	// private String transactionId;
 	/*
 	 * public EmployeeDto() {}
 	 * 
 	 * EmployeeDto(String transactionId) { super(transactionId); }
 	 */
-	
+
 	public String getName() {
 		return name;
 	}
@@ -57,6 +55,5 @@ public class EmployeeDto {
 	 * public void setTransactionId(String transactionId) { this.transactionId =
 	 * transactionId; }
 	 */
-	
-	
+
 }

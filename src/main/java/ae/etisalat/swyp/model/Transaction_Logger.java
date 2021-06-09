@@ -3,31 +3,42 @@ package ae.etisalat.swyp.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Transaction_logger")
+@Table(name = "TRANSACTION_LOGGER")
 public class Transaction_Logger {
+
+	@Override
+	public String toString() {
+		return "Transaction_Logger [id=" + id + ", transactionId=" + transactionId + ", className=" + className
+				+ ", methodName=" + methodName + ", url=" + url + ", requestData=" + requestData + ", responseData="
+				+ responseData + ", executionTime=" + executionTime + "]";
+	}
 
 	@Id
 	@GeneratedValue
 	private BigDecimal id;
-	
+
 	private String transactionId;
-	
+
 	private String className;
-	
+
 	private String methodName;
 	
+	private String url;
+
+	@Lob
 	private String requestData;
-	
+
+	@Lob
 	private String responseData;
-	
-	private Date executionTime;
+
+	private long executionTime;
 
 	public String getTransactionId() {
 		return transactionId;
@@ -69,12 +80,23 @@ public class Transaction_Logger {
 		this.responseData = responseData;
 	}
 
-	public Date getExecutionTime() {
+	public long getExecutionTime() {
 		return executionTime;
 	}
 
-	public void setExecutionTime(Date executionTime) {
+	public void setExecutionTime(long executionTime) {
 		this.executionTime = executionTime;
 	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	
+	
 
 }
